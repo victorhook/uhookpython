@@ -1,0 +1,11 @@
+CHANGELOG.md
+extension.js
+package-lock.json
+README.md
+vsc-extension-quickstart.md
+.vscode-test/
+.vscode/
+.eslintrc.json
+.vscodeignore
+node_modules/
+test/

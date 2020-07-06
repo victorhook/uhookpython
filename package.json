@@ -1,0 +1,112 @@
+{
+	"name": "uhookpython",
+	"displayName": "uhookpython",
+	"description": "Tool to run and upload code to esp8266 with micropython",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.46.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:uhookpython.runFile",
+		"onCommand:uhookpython.getFile",
+		"onCommand:uhookpython.getAll",
+		"onCommand:uhookpython.upload",
+		"onCommand:uhookpython.reset",
+		"onCommand:uhookpython.mkdir",
+		"onCommand:uhookpython.rmdir",
+		"onCommand:uhookpython.setupConfig",
+		"onCommand:uhookpython.ls",
+		"onCommand:uhookpython.debug"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "uhookpython.runFile",
+				"title": "uhookpython: Run file"
+			},
+			{
+				"command": "uhookpython.getFile",
+				"title": "uhookpython: Get file",
+				"args": "string"
+			},
+			{
+				"command": "uhookpython.getAll",
+				"title": "uhookpython: Get all files"
+			},
+			{
+				"command": "uhookpython.upload",
+				"title": "uhookpython: Upload project"
+			},
+			{
+				"command": "uhookpython.setupConfig",
+				"title": "uhookpython: Setup configuration"
+			},
+			{
+				"command": "uhookpython.ls",
+				"title": "uhookpython: ls"
+			},
+			{
+				"command": "uhookpython.reset",
+				"title": "uhookpython: reset"
+			},
+			{
+				"command": "uhookpython.mkdir",
+				"title": "uhookpython: mkdir"
+			},
+			{
+				"command": "uhookpython.rmdir",
+				"title": "uhookpython: rmdir"
+			},
+			{
+				"command": "uhookpython.debug",
+				"title": "uhookpython: debug"
+			}
+		],
+		"configuration": {
+			"title": "uhookpython",
+			"properties": {
+				"uhookpython.baud": {
+					"type": "integer",
+					"default": 115200,
+					"description": "Enter your baud rate"
+				},
+				"uhookpython.port": {
+					"type": "string",
+					"default": "/dev/ttyUSB0",
+					"description": "Enter the usb port"
+				},
+				"uhookpython.ampyPath": {
+					"type": "string",
+					"description": "Enter the absolut path for the ampy executable"
+				},
+				"uhookpython.projectPath": {
+					"type": "string",
+					"description": "Enter the directory that the files will be uploaded to"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.46.0",
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^7.0.2",
+		"@types/node": "^13.11.0",
+		"eslint": "^6.8.0",
+		"glob": "^7.1.6",
+		"mocha": "^7.1.2",
+		"typescript": "^3.8.3",
+		"vscode-test": "^1.3.0"
+	},
+	"dependencies": {
+		"serialport": "^9.0.0"
+	}
+}
