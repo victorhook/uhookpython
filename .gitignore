@@ -1,5 +1,4 @@
 CHANGELOG.md
-extension.js
 package-lock.json
 README.md
 vsc-extension-quickstart.md
@@ -9,3 +8,4 @@ vsc-extension-quickstart.md
 .vscodeignore
 node_modules/
 test/
+jsconfig.json
